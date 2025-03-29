@@ -1,15 +1,17 @@
-import ProductModel from "../models/productModel";
+import ProductModel from "../models/productModel.js";
 
 //business logic
 
+//For getting / fetching products
+
 const getProducts = async(req,res)=>{
     try{
-        const allProducts = ProductModel.find();
+        const allProducts = await ProductModel.find();
 
         if(!allProducts){
             res.json({
                 succes:false,
-                message:"There is no products"
+                message:"There are no products"
             })
             //if we have products
             res.status(200).json({
@@ -25,3 +27,6 @@ const getProducts = async(req,res)=>{
         })
     }
 }
+
+
+export {getProducts}
