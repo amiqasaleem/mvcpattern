@@ -15,6 +15,7 @@ connectDB();
 app.get('/', (req, res)=>{
     res.send("Hello Worlddddddddd")
 })
+
 //load the router
 
 app.use('/api', productRoutes)
